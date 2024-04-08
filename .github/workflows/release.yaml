@@ -1,0 +1,23 @@
+---
+name: Release
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  changelog:
+    uses: obervinov/_templates/.github/workflows/changelog.yaml@release/v1.1.0
+
+  readme:
+    uses: obervinov/_templates/.github/workflows/readme.yaml@release/v1.1.0
+
+  images:
+    uses: obervinov/_templates/.github/workflows/images.yaml@release/v1.1.0
+
+  create-release:
+    uses: obervinov/_templates/.github/workflows/release.yaml@release/v1.1.0
+    needs: [changelog, readme, images]

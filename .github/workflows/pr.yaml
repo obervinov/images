@@ -1,0 +1,20 @@
+---
+name: PR
+
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+      - '**'
+      - '!main'
+
+jobs:
+  changelog:
+    uses: obervinov/_templates/.github/workflows/changelog.yaml@release/v1.1.0
+
+  readme:
+    uses: obervinov/_templates/.github/workflows/readme.yaml@release/v1.1.0
+
+  images:
+    uses: obervinov/_templates/.github/workflows/images.yaml@release/v1.1.0

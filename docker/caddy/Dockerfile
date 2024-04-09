@@ -1,5 +1,5 @@
 # Build binary with plugins
-FROM golang:1.20.12-alpine3.18 AS builder
+FROM golang:1.21.9-alpine3.19 AS builder
 
 WORKDIR /tmp
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates

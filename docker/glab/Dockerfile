@@ -1,9 +1,9 @@
 FROM golang:1.21.9-alpine3.19 AS builder
 
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates
-COPY ./release-cli /release-cli
+RUN git clone https://gitlab.com/gitlab-org/release-cli.git
 WORKDIR /release-cli
-RUN ls -lah && make build
+RUN make build
 
 
 

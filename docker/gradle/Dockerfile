@@ -1,5 +1,7 @@
 FROM gradle:alpine
 
+ENV VAULT_VERSION=1.16.1
+
 LABEL org.opencontainers.image.description "This image contains ci utilities for building gradle projects"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/gradle-ci
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/gradle-ci/README.md
@@ -14,17 +16,17 @@ RUN apk add --no-cache \
         bash
 
 # Install vault client
-RUN apk add --update --virtual --no-cache .deps gnupg && \
+RUN apk add --update --virtual .deps --no-cache gnupg && \
     cd /tmp && \
-    wget https://releases.hashicorp.com/${PRODUCT}/${VERSION}/${PRODUCT}_${VERSION}_linux_amd64.zip && \
-    wget https://releases.hashicorp.com/${PRODUCT}/${VERSION}/${PRODUCT}_${VERSION}_SHA256SUMS && \
-    wget https://releases.hashicorp.com/${PRODUCT}/${VERSION}/${PRODUCT}_${VERSION}_SHA256SUMS.sig && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS.sig && \
     wget -qO- https://www.hashicorp.com/.well-known/pgp-key.txt | gpg --import && \
-    gpg --verify ${PRODUCT}_${VERSION}_SHA256SUMS.sig ${PRODUCT}_${VERSION}_SHA256SUMS && \
-    grep ${PRODUCT}_${VERSION}_linux_amd64.zip ${PRODUCT}_${VERSION}_SHA256SUMS | sha256sum -c && \
-    unzip /tmp/${PRODUCT}_${VERSION}_linux_amd64.zip -d /tmp && \
-    mv /tmp/${PRODUCT} /usr/local/bin/${PRODUCT} && \
-    rm -f /tmp/${PRODUCT}_${VERSION}_linux_amd64.zip ${PRODUCT}_${VERSION}_SHA256SUMS ${VERSION}/${PRODUCT}_${VERSION}_SHA256SUMS.sig && \
+    gpg --verify vault_${VAULT_VERSION}_SHA256SUMS.sig vault_${VAULT_VERSION}_SHA256SUMS && \
+    grep vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c && \
+    unzip /tmp/vault_${VAULT_VERSION}_linux_amd64.zip -d /tmp && \
+    mv /tmp/vault /usr/local/bin/vault && \
+    rm -f /tmp/vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS ${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS.sig && \
     apk del .deps
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \

@@ -1,8 +1,11 @@
-FROM golang:1.19.1-alpine3.16 AS builder
+FROM golang:1.21.9-alpine3.19 AS builder
 
+# Install dependencies
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates
-COPY ./release-cli /release-cli
-WORKDIR /release-cli
+RUN git clone https://gitlab.com/gitlab-org/release-cli.git
+
+# Build binary
+WORKDIR /go/release-cli
 RUN make build
 
 
@@ -25,5 +28,5 @@ RUN apk add --no-cache \
             aws-cli \
             helm
 
-COPY --from=builder /release-cli/bin/release-cli /usr/local/bin/release-cli
+COPY --from=builder /go/release-cli/bin/release-cli /usr/local/bin/release-cli
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/

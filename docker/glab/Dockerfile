@@ -3,7 +3,7 @@ FROM golang:1.21.9-alpine3.19 AS builder
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates
 COPY ./release-cli /release-cli
 WORKDIR /release-cli
-RUN make build
+RUN ls -lah && make build
 
 
 

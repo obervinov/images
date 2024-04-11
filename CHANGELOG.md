@@ -5,9 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## v1.1.0 - 2024-04-11
 ### What's Changed
-**Full Changelog**: https://github.com/obervinov/images/compare/v1.0.0...v1.1.0 by @obervinov in https://github.com/obervinov/pyinstabot-downloader/pull/2
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.0.0...v1.1.0 by @obervinov in https://github.com/obervinov/images/pull/2
 #### 🚀 Features
-* [Add image with backup tools](https://github.com/obervinov/pyinstabot-downloader/pull/2)
+* [Add image with backup tools](https://github.com/obervinov/images/pull/2)
 
 
 ## v1.0.0 - 2024-04-10

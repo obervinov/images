@@ -1,4 +1,4 @@
-FROM apline:3.19.1
+FROM alpine:3.19.1
 
 LABEL org.opencontainers.image.description "This image contains tools for backup and restore data from different sources."
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/backup-tools

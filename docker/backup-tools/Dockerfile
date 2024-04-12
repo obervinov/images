@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/ba
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/backup-tools/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version 1.0.0
+LABEL org.opencontainers.image.version 1.0.1
 
 # Install tools for backup and restore
 RUN apk --no-cache add \
@@ -17,4 +17,5 @@ RUN apk --no-cache add \
     unzip \
     zip \
     postgresql \
-    s3cmd
+    s3cmd \
+    rsync

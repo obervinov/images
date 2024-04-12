@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/de
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/debug/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version 1.0.5
+LABEL org.opencontainers.image.version 1.0.6
 
 RUN apt-get update && apt-get install -y \
     software-properties-common \
@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     mc \
     net-tools \
     dnsutils \
+    rsync \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

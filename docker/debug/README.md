@@ -27,6 +27,7 @@ This Docker image provides a collection of utilities essential for investigating
 - `dnsutils`
 - `awscli` (Amazon Web Services Command Line Interface)
 - `yq` (YAML processor)
+- `rsync` (Remote file synchronization utility)
 
 ## Usage
 

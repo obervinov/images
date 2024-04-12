@@ -14,6 +14,7 @@ This Docker image contains a collection of tools for backing up and restoring da
   - `zip`: Utility for creating ZIP archives.
   - `postgresql`: PostgreSQL client for interacting with PostgreSQL databases.
   - `s3cmd`: Command-line tool for managing Amazon S3 and other S3-compatible cloud storage services.
+  - `rsync`: Utility for efficiently transferring and synchronizing files between systems.
 
 ## Usage
 

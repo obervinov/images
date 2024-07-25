@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.1.1...v1.1.2 by @obervinov in https://github.com/obervinov/images/pull/9
 #### 🚀 Features
-* [Add jq and jwt tools in debug image](https://github.com/obervinov/images/pull/9)
+* Add `jq` and `jwt` tools in debug image
+* Bump workflow version to `1.2.6`
 
 
 ## v1.1.1 - 2024-04-12

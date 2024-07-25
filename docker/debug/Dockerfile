@@ -29,9 +29,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl https://github.com/mike-engel/jwt-cli/releases/download/6.1.0/jwt-linux.tar.gz -o jwt-linux.tar.gz &&\
-    tar -xvf jwt-linux.tar.gz &&\
-    mv jwt /usr/local/bin/jwt
+COPY bin/ /usr/local/bin/
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&\
     unzip awscliv2.zip &&\

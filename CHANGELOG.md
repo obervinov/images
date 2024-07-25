@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.1.2 - 2024-07-25
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.1.1...v1.1.2 by @obervinov in https://github.com/obervinov/images/pull/9
+#### 🚀 Features
+* [Add jq and jwt tools in debug image](https://github.com/obervinov/images/pull/9)
+
+
 ## v1.1.1 - 2024-04-12
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.1.0...v1.1.1 by @obervinov in https://github.com/obervinov/images/pull/3

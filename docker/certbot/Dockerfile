@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version 2.11.0
 
-RUN apk add --no-cache nginx
+RUN apk update --no-cache && apk upgrade --no-cache && apk add --no-cache nginx
 
 COPY cli.ini /etc/letsencrypt/cli.ini
 COPY entrypoint.sh /entrypoint.sh

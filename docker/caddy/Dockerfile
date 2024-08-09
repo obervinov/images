@@ -23,4 +23,6 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version 2.8.4
 
+RUN apk update --no-cache && apk upgrade --no-cache
+
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy

@@ -10,8 +10,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * Add `rclone` and `vault` in backup-tools image
 * Bump base images version
 #### 🐛 Bug Fixes
-* [ Fix code scanning alert - golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses](https://github.com/obervinov/images/issues/10)
-* 
+* [Fix code scanning alert - golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses](https://github.com/obervinov/images/issues/10)
+* [Fix code scanning alert - golang: html/template: improper handling of JavaScript whitespace](https://github.com/obervinov/images/issues/11)
+* [Fix code scanning alert - zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6](https://github.com/obervinov/images/issues/12)
+* [Fix code scanning alert - OpenEXR: Heap Overflow in Scanline Deep Data Parsing](https://github.com/obervinov/images/issues/13)
+* [Fix code scanning alert - expat: Integer overflow in storeRawNames](https://github.com/obervinov/images/issues/19)
+* [Fix code scanning alert - busybox: stack overflow vulnerability in ash.c leads to arbitrary code execution](https://github.com/obervinov/images/issues/17)
+* [Fix code scanning alert - git: Recursive clones RCE](https://github.com/obervinov/images/issues/16)
+* [Fix code scanning alert - aom: heap-buffer-overflow on frame size change](https://github.com/obervinov/images/issues/15)
+* [Fix code scanning alert - libaom: Integer overflow in internal function img_alloc_helper](https://github.com/obervinov/images/issues/14)
+
 
 ## v1.1.2 - 2024-07-25
 ### What's Changed

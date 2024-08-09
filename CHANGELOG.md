@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.1.3 - 2024-08-09
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.1.2...v1.1.3 by @obervinov in https://github.com/obervinov/images/pull/20
+#### 🚀 Features
+* Add `rclone` and `vault` in backup-tools image
+* Bump base images version
+#### 🐛 Bug Fixes
+* [ Fix code scanning alert - golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses](https://github.com/obervinov/images/issues/10)
+* 
+
 ## v1.1.2 - 2024-07-25
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.1.1...v1.1.2 by @obervinov in https://github.com/obervinov/images/pull/9

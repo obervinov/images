@@ -4,8 +4,8 @@ This Docker image is designed to provide Certbot functionality for native Nginx 
 
 ## Image Details
 
-- **Base Image**: `certbot/certbot:v1.22.0`
-- **Version**: 1.0.0
+- **Base Image**: `certbot/certbot:v2.11.1`
+- **Version**: 2.11.0
 
 ## Features
 

@@ -1,4 +1,4 @@
-FROM golang:1.21.9-alpine3.19 AS builder
+FROM golang:1.22.5-alpine3.20 AS builder
 
 # Install dependencies
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates
@@ -10,14 +10,14 @@ RUN make build
 
 
 
-FROM alpine:3.18.2
+FROM alpine:3.20.2
 
 LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker-/glab
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker-/glab/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version 1.0.0
+LABEL org.opencontainers.image.version 1.0.1
 
 RUN apk add --no-cache \
             glab \

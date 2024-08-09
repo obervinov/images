@@ -1,13 +1,13 @@
 FROM gradle:alpine
 
-ENV VAULT_VERSION=1.16.1
+ENV VAULT_VERSION=1.17.2
 
 LABEL org.opencontainers.image.description "This image contains ci utilities for building gradle projects"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/gradle-ci
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/gradle-ci/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version v1.0.0
+LABEL org.opencontainers.image.version v1.0.1
 
 # Install dependencies
 RUN apk add --no-cache \

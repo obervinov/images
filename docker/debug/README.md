@@ -4,8 +4,8 @@ This Docker image provides a collection of utilities essential for investigating
 
 ## Image Details
 
-- **Base Image**: `ubuntu:23.10`
-- **Version**: 1.0.5
+- **Base Image**: `ubuntu:24.10`
+- **Version**: 1.0.8
 
 ## Included Utilities
 

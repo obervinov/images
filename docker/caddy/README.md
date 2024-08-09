@@ -12,8 +12,8 @@ This Docker image is built in two stages:
 
 ## Image Details
 
-- **Base Image**: `golang:1.20.12-alpine3.18`
-- **Final Image**: `caddy:2.7.5-alpine`
+- **Base Image**: `golang:1.22.5-alpine3.20`
+- **Final Image**: `caddy:2.8.4-alpine`
 - **Plugins Included**:
   - [github.com/caddy-dns/digitalocean](https://github.com/caddy-dns/digitalocean)
   - [github.com/mholt/caddy-l4](https://github.com/mholt/caddy-l4)

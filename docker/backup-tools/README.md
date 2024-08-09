@@ -15,13 +15,15 @@ This Docker image contains a collection of tools for backing up and restoring da
   - `postgresql`: PostgreSQL client for interacting with PostgreSQL databases.
   - `s3cmd`: Command-line tool for managing Amazon S3 and other S3-compatible cloud storage services.
   - `rsync`: Utility for efficiently transferring and synchronizing files between systems.
+  - `rclone`: Command-line program to manage files on cloud storage.
+  - `vault`: A tool for managing secrets.
 
 ## Usage
 
 To use this image, you can pull it from Docker Hub using the following command:
 
 ```bash
-docker pull obervinov/images/backup-tools:1.0.0
+docker pull obervinov/images/backup-tools:1.0.2
 ```
 
 Once pulled, you can run containers based on this image and use the included tools for backup and restore operations.

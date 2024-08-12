@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 #### 🚀 Features
 * Add `rclone` and `vault` in backup-tools image
 * Bump base images version
+* Bump workflow version to `1.2.7`
+* Small improvements in the Dockerfiles
 #### 🐛 Bug Fixes
 * [Fix code scanning alert - golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses](https://github.com/obervinov/images/issues/10)
 * [Fix code scanning alert - golang: html/template: improper handling of JavaScript whitespace](https://github.com/obervinov/images/issues/11)

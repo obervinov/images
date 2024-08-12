@@ -21,8 +21,7 @@ LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version 1.0.2
 
 # Update and install necessary packages
-RUN apk --no-cache update && \
-    apk --no-cache upgrade && \
+RUN apk -U upgrade && \
     apk --no-cache add \
     bash \
     curl \

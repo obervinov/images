@@ -19,7 +19,8 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version 1.0.1
 
-RUN apk update && apk upgrade --no-cache && apk add --no-cache \
+RUN apk -U upgrade && apk add --no-cache \
+    glab \
     curl \
     git \
     vault \

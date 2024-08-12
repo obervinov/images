@@ -13,7 +13,7 @@ RUN make build
 # Download vault binary
 FROM alpine:3.20.2 AS vault-builder 
 
-ENV VAULT_VERSION=1.17.2
+ENV VERSION=1.17.2
 ENV PRODUCT=vault
  
 RUN apk add --update --no-cache --virtual .deps --no-cache gnupg && \

@@ -2,11 +2,6 @@
 
 This Docker image provides utilities for automating work with GitLab.
 
-## Image Details
-
-- **Base Image**: `golang:1.22.5-alpine3.20` (Builder stage), `alpine:3.20.2` (Final stage)
-- **Version**: 1.0.1
-
 ## Features
 
 - **Automated GitLab Work**: The image includes tools for automating various tasks related to GitLab.

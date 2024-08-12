@@ -2,11 +2,6 @@
 
 This Docker image is designed to facilitate running Python scripts and tools.
 
-## Image Details
-
-- **Base Image**: `python:3.12.2`
-- **Version**: 1.0.0
-
 ## Features
 
 - **Python Environment**: The image provides a Python environment suitable for running scripts and tools.

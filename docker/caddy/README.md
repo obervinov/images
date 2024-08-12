@@ -10,14 +10,6 @@ This Docker image is built in two stages:
 
 2. **Build Clear Image**: This stage utilizes the official `caddy` Docker image as a base. It copies the previously built binary into the final image, ensuring that the Caddy server is ready with the configured plugins.
 
-## Image Details
-
-- **Base Image**: `golang:1.22.5-alpine3.20`
-- **Final Image**: `caddy:2.8.4-alpine`
-- **Plugins Included**:
-  - [github.com/caddy-dns/digitalocean](https://github.com/caddy-dns/digitalocean)
-  - [github.com/mholt/caddy-l4](https://github.com/mholt/caddy-l4)
-
 ## Usage
 
 You can use this Docker image by pulling it from the Docker Hub or by building it locally using the provided Dockerfile.

@@ -19,14 +19,14 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version 1.0.1
 
-RUN apk update --no-cache && apk upgrade --no-cache && apk add --no-cache \
-            glab \
-            curl \
-            git \
-            vault \
-            bash \
-            aws-cli \
-            helm
+RUN apk update && apk upgrade --no-cache && apk add --no-cache \
+    glab \
+    curl \
+    git \
+    vault \
+    bash \
+    aws-cli \
+    helm
 
 COPY --from=builder /go/release-cli/bin/release-cli /usr/local/bin/release-cli
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/

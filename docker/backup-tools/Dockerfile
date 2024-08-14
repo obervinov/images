@@ -38,9 +38,7 @@ RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     cp rclone /usr/local/bin/ && \
     chown root:root /usr/local/bin/rclone && \
     chmod 755 /usr/local/bin/rclone && \
-    mkdir -p //usr/local/share/man/man1 && \
-    cp rclone.1 /usr/local/share/man/man1/ && \
-    mandb
+    rclone version
 
 
 # Build the final image

@@ -2,11 +2,6 @@
 
 This Docker image provides a collection of utilities essential for investigating problems related to Kubernetes virtual services.
 
-## Image Details
-
-- **Base Image**: `ubuntu:23.10`
-- **Version**: 1.0.5
-
 ## Included Utilities
 
 - `software-properties-common`

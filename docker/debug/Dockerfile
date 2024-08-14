@@ -1,13 +1,21 @@
-FROM ubuntu:23.10
+### VERSIONS METADATA ###
+ARG IMAGE_VERSION=1.0.8
+ARG UBUNTU_VERSION=24.10
+### END VERSIONS METADATA ###
+
+
+FROM ubuntu:${UBUNTU_VERSION}
+
+ARG IMAGE_VERSION
 
 LABEL org.opencontainers.image.description "This image contains all the necessary utilities to investigate the problems of kubernetes virtual services"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/debug
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/debug/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version 1.0.7
+LABEL org.opencontainers.image.version ${IMAGE_VERSION}
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     software-properties-common \
     nmap \
     netcat-traditional \

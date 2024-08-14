@@ -2,11 +2,6 @@
 
 This Docker image contains Vault for use in GitHub Actions workflows.
 
-## Image Details
-
-- **Base Image**: `vault:1.13.2`
-- **Version**: 1.13.2
-
 ## Features
 
 - **Vault**: The image includes HashiCorp Vault, a tool for managing secrets and protecting sensitive data.

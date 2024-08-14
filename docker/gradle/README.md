@@ -2,11 +2,6 @@
 
 This Docker image provides CI utilities for building Gradle projects.
 
-## Image Details
-
-- **Base Image**: `gradle:alpine`
-- **Version**: v1.0.0
-
 ## Features
 
 - **Gradle Support**: The image includes Gradle and provides an environment suitable for building Gradle projects.

@@ -9,7 +9,8 @@ ARG VAULT_VERSION=1.17.2
 # Download vault binary
 FROM alpine:${ALPINE_VERSION} AS vault-builder
 
-ENV VAULT_VERSION
+ARG VAULT_VERSION
+ENV VAULT_VERSION=${VAULT_VERSION}
 ENV PRODUCT=vault
  
 RUN apk add --update --no-cache --virtual .deps --no-cache gnupg && \

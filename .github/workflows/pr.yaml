@@ -11,13 +11,13 @@ on:
 
 jobs:
   changelog:
-    uses: obervinov/_templates/.github/workflows/changelog.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/changelog.yaml@v1.2.9
 
   pr:
-    uses: obervinov/_templates/.github/workflows/pr.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/pr.yaml@v1.2.9
 
   # readme:
   #   uses: obervinov/_templates/.github/workflows/readme.yaml@v1.2.8
 
   images:
-    uses: obervinov/_templates/.github/workflows/images.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/images.yaml@v1.2.9

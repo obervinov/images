@@ -10,14 +10,14 @@ on:
 
 jobs:
   changelog:
-    uses: obervinov/_templates/.github/workflows/changelog.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/changelog.yaml@v2.0.1
 
   # readme:
   #   uses: obervinov/_templates/.github/workflows/readme.yaml@v1.2.8
 
   images:
-    uses: obervinov/_templates/.github/workflows/images.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/images.yaml@v2.0.1
 
   create-release:
-    uses: obervinov/_templates/.github/workflows/release.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/release.yaml@v2.0.1
     needs: [changelog, images]

@@ -10,14 +10,7 @@ on:
       - '!main'
 
 jobs:
-  changelog:
-    uses: obervinov/_templates/.github/workflows/changelog.yaml@v1.2.8
-
   pr:
-    uses: obervinov/_templates/.github/workflows/pr.yaml@v1.2.8
-
-  # readme:
-  #   uses: obervinov/_templates/.github/workflows/readme.yaml@v1.2.8
-
+    uses: obervinov/_templates/.github/workflows/pr.yaml@v2.0.2
   images:
-    uses: obervinov/_templates/.github/workflows/images.yaml@v1.2.8
+    uses: obervinov/_templates/.github/workflows/images.yaml@v2.0.2

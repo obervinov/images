@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.2.0 - 2025-01-22
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.1.3...v1.2.0 by @obervinov in https://github.com/obervinov/images/pull/24
+#### 🚀 Features
+* Add `ghub` image for GitHub self-hosted runners
+* Bump workflow version to `2.0.2`
+#### 📚 Documentation
+* [Add GH Actions widgets to README.md](https://github.com/obervinov/images/issues/4)
+
+
 ## v1.1.3 - 2024-08-14
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.1.2...v1.1.3 by @obervinov in https://github.com/obervinov/images/pull/20

@@ -1,6 +1,15 @@
 # Docker Images Repository
-
 This repository contains Dockerfiles for building Docker images.
+[![CodeQL](https://github.com/obervinov/images/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/obervinov/images/actions/workflows/github-code-scanning/codeql)
+[![PR](https://github.com/obervinov/images/actions/workflows/pr.yaml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/images/actions/workflows/pr.yaml)
+[![Release](https://github.com/obervinov/images/actions/workflows/release.yaml/badge.svg)](https://github.com/obervinov/images/actions/workflows/release.yaml)
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/obervinov/images?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/obervinov/images?style=for-the-badge)
+![GitHub Release Date](https://img.shields.io/github/release-date/obervinov/images?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/obervinov/images?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/obervinov/images?style=for-the-badge)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ## Docker Images
 
@@ -10,6 +19,7 @@ This repository contains Dockerfiles for building Docker images.
 | certbot       | Docker image for Certbot, the Let's Encrypt client. | [README](docker/certbot/README.md)      | [Manifest](docker/certbot/Dockerfile)      |
 | debug         | Docker image for debugging purposes.                | [README](docker/debug/README.md)        | [Manifest](docker/debug/Dockerfile)        |
 | glab          | Docker image for GitLab CLI tool.                   | [README](docker/glab/README.md)         | [Manifest](docker/glab/Dockerfile)         |
+| ghub          | Docker image for GitHub CLI tool.                   | [README](docker/ghub/README.md)         | [Manifest](docker/ghub/Dockerfile)         |
 | gradle        | Docker image for Gradle CI environment.             | [README](docker/gradle/README.md)       | [Manifest](docker/gradle/Dockerfile)       |
 | python        | Docker image for Python development.                | [README](docker/python/README.md)       | [Manifest](docker/python/Dockerfile)       |
 | vault         | Docker image for HashiCorp Vault.                   | [README](docker/vault/README.md)        | [Manifest](docker/vault/Dockerfile)        |
@@ -24,4 +34,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
 | Name  | Version |
 | ------------------------ | ----------- |
-| GitHub Actions Templates | [v1.2.8](https://github.com/obervinov/_templates/tree/v1.2.8) |
+| GitHub Actions Templates | [v2.0.2](https://github.com/obervinov/_templates/tree/v2.0.2) |

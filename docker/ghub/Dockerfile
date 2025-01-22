@@ -44,9 +44,9 @@ FROM alpine:${ALPINE_VERSION}
 
 ARG IMAGE_VERSION
 
-LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
-LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker-/glab
-LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker-/glab/README.md
+LABEL org.opencontainers.image.description "This image contains utilities for automating work with github self-hosted runners"
+LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker-/ghub
+LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker-/ghub/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version ${IMAGE_VERSION}

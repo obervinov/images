@@ -1,6 +1,6 @@
 # Docker Images Repository
 This repository contains Dockerfiles for building Docker images.
-[![CodeQL](https://github.com/obervinov/images/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/obervinov/images/actions/workflows/github-code-scanning/codeql)
+
 [![PR](https://github.com/obervinov/images/actions/workflows/pr.yaml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/images/actions/workflows/pr.yaml)
 [![Release](https://github.com/obervinov/images/actions/workflows/release.yaml/badge.svg)](https://github.com/obervinov/images/actions/workflows/release.yaml)
 

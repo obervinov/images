@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.3.0 - 2025-01-23
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.2.0...v1.3.0 by @obervinov in https://github.com/obervinov/images/pull/25
+#### 🚀 Features
+* Add support multi-arch build for `ghub` and `backup-tools` images
+* Bump workflow version to `2.1.0`
+
+
 ## v1.2.0 - 2025-01-22
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.1.3...v1.2.0 by @obervinov in https://github.com/obervinov/images/pull/24

@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:python-3.12
+FROM quay.io/jupyterhub/k8s-singleuser-sample
 
 ARG IMAGE_VERSION=1.0.0
 
@@ -28,16 +28,20 @@ RUN useradd -m -d /home/${USER} -s /bin/bash ${USER} && chown -R ${USER}:${USER}
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-        git curl && \
+        git curl software-properties-common && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install python 3.12
+RUN add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python3.12 python3.12-dev python3.12-distutils && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip setuptools
 
 USER ${USER}
 
-RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
-
-### Installing poetry and python dependeces ###
 COPY pyproject.toml /home/${USER}/pyproject.toml
 RUN curl -sSL https://install.python-poetry.org | python -
 RUN poetry install

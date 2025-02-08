@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.0 - 2025-02-08
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.3.0...v1.4.0 by @obervinov in https://github.com/obervinov/images/pull/28
+#### 🚀 Features
+* Add custom JupyterHub image
+* Bump workflow version to `2.1.1`
+
+
 ## v1.3.0 - 2025-01-29
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.2.0...v1.3.0 by @obervinov in https://github.com/obervinov/images/pull/25

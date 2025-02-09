@@ -40,7 +40,6 @@ RUN apt-get update && apt-get upgrade -y && \
         tk-dev \
         libffi-dev \
         liblzma-dev \
-        python3-openssl \
         && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 

@@ -19,12 +19,8 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV VENV_PATH=/home/jupyterhub/app/.venv
 ENV PATH=/home/jupyterhub/.local/bin:$VENV_PATH/bin:$PATH
-ENV USER=jovyan
-
 
 USER root
-
-RUN useradd -m -d /home/${USER} -s /bin/bash ${USER} && chown -R ${USER}:${USER} /home/${USER}
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
@@ -40,9 +36,9 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
 
 RUN pip3 install --upgrade pip setuptools
 
-USER ${USER}
+USER jovyan
 
-COPY pyproject.toml /home/${USER}/pyproject.toml
+COPY pyproject.toml /home/jovyan/pyproject.toml
 RUN curl -sSL https://install.python-poetry.org | python -
 RUN poetry install
-ENV PYTHONPATH=/home/${USER}:/home/${PROJECT_NAME}/.venv/lib/python3.12/site-packages
+ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages

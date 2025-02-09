@@ -59,7 +59,7 @@ jobs:
             --platform linux/amd64,linux/arm64 \
             --build-arg="PROJECT_NAME=${{ github.event.repository.name }}" \
             -t ghcr.io/${{ github.repository }}/${image_name}:${image_tag} \
-            Dockerfile --push
+            . --push
           # Add latest tag to the image
           docker buildx imagetools create \
             ghcr.io/${{ github.repository }}/${image_name}:${image_tag} \

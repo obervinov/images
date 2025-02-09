@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.documentation https://github.com/obervinov/images
 LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version ${IMAGE_VERSION}
-оце
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     software-properties-common \
     nmap \

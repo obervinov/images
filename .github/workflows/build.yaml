@@ -3,10 +3,6 @@ name: Build images
 
 on:
   push:
-    branches:
-      - '*'
-      - '*/*'
-      - '**'
 
 jobs:
   build:

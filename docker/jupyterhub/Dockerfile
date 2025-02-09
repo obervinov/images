@@ -1,7 +1,6 @@
 FROM quay.io/jupyterhub/k8s-singleuser-sample:4.1.0
 
 ARG IMAGE_VERSION=1.0.0
-ARG PYTHON_VERSION=3.12.7
 
 LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/jupyterhub
@@ -44,16 +43,6 @@ RUN apt-get update && apt-get upgrade -y && \
         python3-openssl \
         && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install python 3.12
-RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz \
-    && tar xvf Python-${PYTHON_VERSION}.tgz \
-    && cd Python-${PYTHON_VERSION} \
-    && ./configure --enable-optimizations \
-    && make -j 8 \
-    && make altinstall \
-    && cd .. \
-    && rm -rf Python-${PYTHON_VERSION} Python-${PYTHON_VERSION}.tgz
 
 USER jovyan
 COPY pyproject.toml /home/jovyan/pyproject.toml

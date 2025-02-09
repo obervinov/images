@@ -65,7 +65,7 @@ jobs:
             ghcr.io/${{ github.repository }}/${image_name}:${image_tag} \
             --tag ghcr.io/${{ github.repository }}/${image_name}:latest
           # Scan Docker images with Trivy
-          trivy image --exit-code 0 --severity HIGH,CRITICAL ghcr.io/${{ github.repository }}/${image_name}:${image_tag} -f sarif -o results/trivy-results-${image_name}-${image_tag}.sarif
+          trivy image --exit-code 0 --severity HIGH,CRITICAL ghcr.io/${{ github.repository }}/${image_name}:${image_tag} -f sarif -o trivy-results-${image_name}-${image_tag}.sarif
           # Upload Trivy scan results to GitHub Security tab
           curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" -H "Content-Type: application/json" -d @results/trivy-results-${image_name}-${image_tag}.sarif https://api.github.com/repos/${{ github.repository }}/code-scanning/sarifs
         working-directory: ${{ matrix.directories }}

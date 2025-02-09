@@ -24,6 +24,7 @@ This repository contains Dockerfiles for building Docker images.
 | python        | Docker image for Python development.                | [README](docker/python/README.md)       | [Manifest](docker/python/Dockerfile)       |
 | vault         | Docker image for HashiCorp Vault.                   | [README](docker/vault/README.md)        | [Manifest](docker/vault/Dockerfile)        |
 | backup-tools  | Docker image for backup tools.                      | [README](docker/backup-tools/README.md) | [Manifest](docker/backup-tools/Dockerfile) |
+| jupyterhub    | Docker image for JupyterHub user servers.           | [README](docker/jupyterhub/README.md)   | [Manifest](docker/jupyterhub/Dockerfile)   |
 
 Each directory under `docker/` corresponds to a specific Docker image. Navigate to each directory to view the respective Dockerfile and README for further instructions.
 
@@ -34,4 +35,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
 | Name  | Version |
 | ------------------------ | ----------- |
-| GitHub Actions Templates | [v2.0.2](https://github.com/obervinov/_templates/tree/v2.0.2) |
+| GitHub Actions Templates | [v2.1.1](https://github.com/obervinov/_templates/tree/v2.1.1) |

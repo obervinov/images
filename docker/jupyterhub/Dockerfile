@@ -1,6 +1,7 @@
 FROM quay.io/jupyterhub/k8s-singleuser-sample:4.1.0
 
 ARG IMAGE_VERSION=1.0.0
+ARG PYTHON_VERSION=3.12.7
 
 LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/jupyterhub
@@ -21,24 +22,44 @@ ENV VENV_PATH=/home/jupyterhub/app/.venv
 ENV PATH=/home/jupyterhub/.local/bin:$VENV_PATH/bin:$PATH
 
 USER root
-
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-        git curl software-properties-common ca-certificates lsb-release gnupg && \
+        git \
+        curl \
+        software-properties-common \
+        build-essential \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        wget \
+        llvm \
+        libncurses5-dev \
+        libncursesw5-dev \
+        xz-utils \
+        tk-dev \
+        libffi-dev \
+        liblzma-dev \
+        python3-openssl \
+        && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install python 3.12
-RUN add-apt-repository ppa:deadsnakes/ppa && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends \
-        python3.12 python3.12-dev python3.12-distutils && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install --upgrade pip setuptools
+RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz \
+    && tar xvf Python-${PYTHON_VERSION}.tgz \
+    && cd Python-${PYTHON_VERSION} \
+    && ./configure --enable-optimizations \
+    && make -j 8 \
+    && make altinstall \
+    && cd .. \
+    && rm -rf Python-${PYTHON_VERSION} Python-${PYTHON_VERSION}.tgz
 
 USER jovyan
-
 COPY pyproject.toml /home/jovyan/pyproject.toml
-RUN curl -sSL https://install.python-poetry.org | python -
-RUN poetry install
+RUN curl -sSL https://install.python-poetry.org | python - && \
+    export PATH="/home/jovyan/.local/bin:$PATH" && \
+    pip3 install --upgrade pip setuptools && \
+    poetry install
+
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages

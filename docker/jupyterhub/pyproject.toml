@@ -10,7 +10,7 @@ homepage = "https://github.com/obervinov/images/jupyterhub"
 repository = "https://github.com/obervinov/images"
 documentation = "https://github.com/obervinov/images/jupyterhub/blob/main/README.md"
 keywords = ["jupyterhub", "python", "poetry", "user-server"]
-include = ["README.md"]
+package-mode = false
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/obervinov/images/issues"

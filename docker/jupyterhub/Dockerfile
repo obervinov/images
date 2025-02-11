@@ -41,13 +41,8 @@ RUN apt-get update && apt-get upgrade -y && \
         libffi-dev \
         liblzma-dev \
         && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/* && \
+    pip3 install --upgrade pip setuptools wheel
 
 USER jovyan
-COPY pyproject.toml /home/jovyan/pyproject.toml
-RUN curl -sSL https://install.python-poetry.org | python - && \
-    export PATH="/home/jovyan/.local/bin:$PATH" && \
-    pip3 install --upgrade pip setuptools && \
-    poetry install
-
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages

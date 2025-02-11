@@ -26,8 +26,6 @@ jobs:
           - "docker/jupyterhub"
           - "docker/python"
           - "docker/vault"
-      # fail-fast: true
-      max-parallel: 1
 
     steps:
       - name: Checkout code

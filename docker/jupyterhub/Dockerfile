@@ -1,6 +1,6 @@
 FROM quay.io/jupyterhub/k8s-singleuser-sample:4.1.0
 
-ARG IMAGE_VERSION=1.0.0
+ARG IMAGE_VERSION=1.0.1
 
 LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/jupyterhub
@@ -13,18 +13,16 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
 ENV PIP_NO_CACHE_DIR=off
 ENV PIP_DISABLE_PIP_VERSION_CHECK=on
-ENV POETRY_VIRTUALENVS_IN_PROJECT=true
-ENV POETRY_NO_INTERACTION=1
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV VENV_PATH=/home/jupyterhub/app/.venv
-ENV PATH=/home/jupyterhub/.local/bin:$VENV_PATH/bin:$PATH
+ENV VENV_PATH=/home/jovyan/.venv
+ENV PATH=/home/jovyan/.local/bin:$VENV_PATH/bin:$PATH
 
 USER root
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
         git \
         curl \
+        mc \
+        vim \
         software-properties-common \
         build-essential \
         libssl-dev \
@@ -40,9 +38,10 @@ RUN apt-get update && apt-get upgrade -y && \
         tk-dev \
         libffi-dev \
         liblzma-dev \
+        libgl1-mesa-dev \
+        libglib2.0-0 \
         && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    pip3 install --upgrade pip setuptools wheel
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER jovyan
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages

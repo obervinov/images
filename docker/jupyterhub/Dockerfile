@@ -44,4 +44,5 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER jovyan
+ENV PATH=/home/jovyan/.local/bin:$VENV_PATH/bin:$PATH
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages

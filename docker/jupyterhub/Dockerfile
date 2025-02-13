@@ -13,8 +13,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
 ENV PIP_NO_CACHE_DIR=off
 ENV PIP_DISABLE_PIP_VERSION_CHECK=on
-ENV VENV_PATH=/home/jovyan/.venv
-ENV PATH=/home/jovyan/.local/bin:$VENV_PATH/bin:$PATH
 
 USER root
 RUN apt-get update && apt-get upgrade -y && \
@@ -44,5 +42,7 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER jovyan
+ENV VENV_PATH=/home/jovyan/.venv
 ENV PATH=/home/jovyan/.local/bin:$VENV_PATH/bin:$PATH
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages
+RUN pip3 install --upgrade jupyterlab jupyterlab-git

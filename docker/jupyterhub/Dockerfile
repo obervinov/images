@@ -43,6 +43,6 @@ RUN apt-get update && apt-get upgrade -y && \
 
 USER jovyan
 ENV VENV_PATH=/home/jovyan/.venv
-ENV PATH=/home/jovyan/.local/bin:$VENV_PATH/bin:$PATH
+ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/jovyan/.local/bin:$VENV_PATH/bin
 ENV PYTHONPATH=/home/jovyan:/home/jovyan/.venv/lib/python3.12/site-packages
 RUN pip3 install --upgrade jupyterlab jupyterlab-git

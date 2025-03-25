@@ -8,7 +8,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.1...v1.4.2 by @obervinov in https://github.com/obervinov/images/pull/30
 #### 🚀 Features
 * Bump dependencies in the `Caddy` image
-* Bump dependencies in the `JupyterHub` image
 * Add geoip module to the `Caddy` image
 #### 🐛 Bug Fixes
 * Small improvements in the `JupyterHub` image

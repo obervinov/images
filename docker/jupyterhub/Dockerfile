@@ -1,8 +1,8 @@
 FROM quay.io/jupyterhub/k8s-singleuser-sample:4.1.0
 
-ARG IMAGE_VERSION=1.0.1
+ARG IMAGE_VERSION=1.0.2
 
-LABEL org.opencontainers.image.description "This image contains utilities for automating work with gitlab"
+LABEL org.opencontainers.image.description "This image contains utilities for automating work with JupiterHub"
 LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker/jupyterhub
 LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker/jupyterhub/README.md
 LABEL org.opencontainers.image.authors https://github.com/obervinov
@@ -40,6 +40,8 @@ RUN apt-get update && apt-get upgrade -y && \
         libglib2.0-0 \
         && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /.git-credentials-cache && chmod 600 /.git-credentials-cache
+RUN git config --global credential.helper 'cache --timeout=3600000'
 
 USER jovyan
 ENV VENV_PATH=/home/jovyan/.venv

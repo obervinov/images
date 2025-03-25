@@ -1,8 +1,8 @@
 ### VERSIONS METADATA ###
-ARG IMAGE_VERSION=2.8.4
-ARG ALPINE_VERSION=3.20
-ARG GO_VERSION=1.22.5
-ARG CADDY_VERSION=2.8.4
+ARG IMAGE_VERSION=2.9.1
+ARG ALPINE_VERSION=3.21.3
+ARG GO_VERSION=1.24.1
+ARG CADDY_VERSION=2.9.1
 ### END VERSIONS METADATA ###
 
 
@@ -18,6 +18,7 @@ RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 RUN xcaddy build \
     --with github.com/caddy-dns/digitalocean@master \
     --with github.com/mholt/caddy-l4 \
+    --with github.com/shift72/caddy-geo-ip \
     --output /usr/bin/caddy
 
 

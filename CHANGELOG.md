@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.2 - 2025-03-25
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.1...v1.4.2 by @obervinov in https://github.com/obervinov/images/pull/30
+#### 🚀 Features
+* Bump dependencies in the `Caddy` image
+* Bump dependencies in the `JupyterHub` image
+* Add geoip module to the `Caddy` image
+#### 🐛 Bug Fixes
+* Small improvements in the `JupyterHub` image
+
+
 ## v1.4.1 - 2025-02-18
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.0...v1.4.1 by @obervinov in https://github.com/obervinov/images/pull/29

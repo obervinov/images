@@ -1,13 +1,12 @@
 ### VERSIONS METADATA ###
 ARG IMAGE_VERSION=2.9.1
-ARG ALPINE_VERSION=3.21.3
-ARG GO_VERSION=1.24.1
+ARG GOLANG_VERSION=1.24.1-alpine3.21
 ARG CADDY_VERSION=2.9.1
 ### END VERSIONS METADATA ###
 
 
 # Build binary with plugins
-FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
+FROM golang:${GOLANG_VERSION} AS builder
 
 WORKDIR /tmp
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates

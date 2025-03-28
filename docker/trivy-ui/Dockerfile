@@ -9,9 +9,9 @@ RUN apt update && apt install -y curl git \
     && apt install -y nodejs \
     && npm install -g npm@latest \
     && rm -rf /var/lib/apt/lists/*
-RUN git clone https://github.com/llocustbaby/trivy-ui.git && mv trivy-ui/* .
-RUN cd go-server && go build -o go-server
-RUN cd trivy-dashboard && npm install && npm run build
+RUN git clone "https://github.com/llocustbaby/trivy-ui.git"
+RUN cd trivy-ui/go-server && go build -o go-server
+RUN cd trivy-ui/trivy-dashboard && npm install && npm run build
 
 
 FROM debian:bullseye-slim
@@ -19,8 +19,8 @@ FROM debian:bullseye-slim
 ARG IMAGE_VERSION
 
 WORKDIR /app
-COPY --from=build /app/go-server/go-server /app/go-server
-COPY --from=build /app/trivy-dashboard/dist /app/trivy-dashboard/dist
+COPY --from=build /app/trivy-ui/go-server/go-server /app/go-server
+COPY --from=build /app/trivy-ui/trivy-dashboard/dist /app/trivy-dashboard/dist
 RUN apt update && apt install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
 LABEL org.opencontainers.image.description "This image contains Backend Trivy UI"

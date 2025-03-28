@@ -9,7 +9,7 @@ RUN apt update && apt install -y curl git \
     && apt install -y nodejs \
     && npm install -g npm@latest \
     && rm -rf /var/lib/apt/lists/*
-RUN git clone "https://github.com/obervinov/trivy-ui.git" && git checkout feature/k8s-in-cluster-support
+RUN git clone "https://github.com/obervinov/trivy-ui.git" && cd trivy-ui && git checkout feature/k8s-in-cluster-support
 RUN cd trivy-ui/go-server && go build -o go-server
 RUN cd trivy-ui/trivy-dashboard && npm install && npm run build
 

@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.3 - 2025-03-27
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.2...v1.4.3 by @obervinov in https://github.com/obervinov/images/pull/31
+#### 🚀 Features
+* Add new image `trivy-ui` for Trivy web UI
+
+
 ## v1.4.2 - 2025-03-25
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.1...v1.4.2 by @obervinov in https://github.com/obervinov/images/pull/30

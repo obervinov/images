@@ -6,8 +6,8 @@ Versions supported to fix vulnerabilities
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
+| 1.x.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-In order to inform me about the vulnerability, write the details to the mail `github.obervinov@proton.me`
+In order to inform me about the vulnerability, please create an issue with the label "security" and I will try to fix it as soon as possible.

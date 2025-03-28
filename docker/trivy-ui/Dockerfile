@@ -23,7 +23,7 @@ COPY --from=build /app/trivy-ui/go-server/go-server /app/go-server
 COPY --from=build /app/trivy-ui/trivy-dashboard/dist /app/trivy-dashboard/dist
 RUN apt update && apt install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
-LABEL org.opencontainers.image.description "This image contains Backend Trivy UI"
+LABEL org.opencontainers.image.description "This image contains Trivy UI"
 LABEL org.opencontainers.image.url "https://github.com/llocustbaby/trivy-ui"
 LABEL org.opencontainers.image.documentation "https://github.com/locustbaby/trivy-ui/blob/main/README.md"
 LABEL org.opencontainers.image.authors "https://github.com/locustbaby"

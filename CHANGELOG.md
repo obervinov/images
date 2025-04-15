@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.4 - 2025-04-15
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.3...v1.4.4 by @obervinov in https://github.com/obervinov/images/pull/32
+#### 🚀 Features
+* Add new image `smartctl-exporter` for smartctl exporter
+* Switch source repository for `trivy-ui` image to `locustbaby/trivy-ui`
+
+
 ## v1.4.3 - 2025-03-28
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.2...v1.4.3 by @obervinov in https://github.com/obervinov/images/pull/31

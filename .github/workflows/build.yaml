@@ -27,6 +27,7 @@ jobs:
           - "docker/python"
           - "docker/vault"
           - "docker/trivy-ui"
+          - "docker/smartctl-exporter"
 
     steps:
       - name: Checkout code

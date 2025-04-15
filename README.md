@@ -26,6 +26,7 @@ This repository contains Dockerfiles for building Docker images.
 | backup-tools  | Docker image for backup tools.                      | [README](docker/backup-tools/README.md) | [Manifest](docker/backup-tools/Dockerfile) |
 | jupyterhub    | Docker image for JupyterHub user servers.           | [README](docker/jupyterhub/README.md)   | [Manifest](docker/jupyterhub/Dockerfile)   |
 | trivy-ui     | Docker image for Trivy web UI.                      | [README](docker/trivy-ui/README.md)     | [Manifest](docker/trivy-ui/Dockerfile)     |
+| smartctl-exporter | Docker image for smartctl-exporter.               | [README](docker/smartctl-exporter/README.md) | [Manifest](docker/smartctl-exporter/Dockerfile) |
 
 Each directory under `docker/` corresponds to a specific Docker image. Navigate to each directory to view the respective Dockerfile and README for further instructions.
 

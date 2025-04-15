@@ -11,7 +11,7 @@ RUN git clone "https://github.com/prometheus-community/smartctl_exporter.git" &&
 FROM alpine:${ALPINE_VERSION}
 ARG IMAGE_VERSION
 
-RUN apt update && apt install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache ca-certificates && apk upgrade --no-cache && rm -rf /var/cache/apk/*
 COPY --from=build /build/smartctl_exporter/smartctl_exporter /bin/smartctl_exporter
 
 LABEL org.opencontainers.image.description "This image contains Smartctl Exporter"

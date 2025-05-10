@@ -3,6 +3,8 @@ This repository contains Dockerfiles for building Docker images.
 
 [![PR](https://github.com/obervinov/images/actions/workflows/pr.yaml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/images/actions/workflows/pr.yaml)
 [![Release](https://github.com/obervinov/images/actions/workflows/release.yaml/badge.svg)](https://github.com/obervinov/images/actions/workflows/release.yaml)
+[![Build](https://github.com/obervinov/images/actions/workflows/build.yaml/badge.svg)](https://github.com/obervinov/images/actions/workflows/build.yaml)
+[![Cleanup](https://github.com/obervinov/images/actions/workflows/cleanup.yaml/badge.svg)](https://github.com/obervinov/images/actions/workflows/cleanup.yaml)
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/obervinov/images?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/obervinov/images?style=for-the-badge)

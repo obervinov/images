@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apk update && apk add --no-cache git make git gcc libc-dev curl ca-certificates binutils-gold
 RUN git clone "https://github.com/obervinov/popeye.git" && cd popeye && git checkout improved-minio-support
 WORKDIR /app/popeye
-RUN CGO_ENABLED=0 make build
+RUN make build
 
 
 FROM alpine:3.21.3

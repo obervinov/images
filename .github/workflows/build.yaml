@@ -21,7 +21,7 @@ jobs:
           - "docker/certbot"
           - "docker/debug"
           - "docker/ghub"
-          #- "docker/glab"
+          - "docker/glab"
           - "docker/gradle"
           - "docker/jupyterhub"
           - "docker/python"

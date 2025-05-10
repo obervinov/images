@@ -28,6 +28,7 @@ jobs:
           - "docker/vault"
           - "docker/trivy-ui"
           - "docker/smartctl-exporter"
+          - "docker/popeye"
 
     steps:
       - name: Checkout code

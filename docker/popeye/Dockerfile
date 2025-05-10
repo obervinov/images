@@ -5,7 +5,7 @@ ARG IMAGE_VERSION=0.22.2-dev
 FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} AS build
 WORKDIR /app
 RUN apk update && apk add --no-cache git make git gcc libc-dev curl ca-certificates binutils-gold
-RUN git clone "https://github.com/obervinov/popeye.git" && cd popeye && git checkout improved-minio-support
+RUN git clone "https://github.com/obervinov/popeye.git" && cd popeye && git checkout ac794e79ee69c3b51ab0af586a3d7d781bbd2124
 WORKDIR /app/popeye
 RUN make build
 

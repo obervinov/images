@@ -36,8 +36,7 @@ jobs:
         uses: Chizkiyahu/delete-untagged-ghcr-action@v6
         with:
           token: ${{ secrets.PAT_GHCR_CLEANUP }}
-          repository: images
-          package_name: ${{ matrix.images }}
+          package_name: ${{ github.event.repository.name }}/${{ matrix.images }}
           untagged_only: true
           except_untagged_multiplatform: false
           owner_type: 'user'

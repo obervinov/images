@@ -29,6 +29,20 @@ jobs:
           - "docker/trivy-ui"
           - "docker/smartctl-exporter"
           - "docker/popeye"
+        cleanup-packages:
+          - "backup-tools"
+          - "caddy"
+          - "certbot"
+          - "debug"
+          - "ghub"
+          - "glab"
+          - "gradle"
+          - "jupyterhub"
+          - "python"
+          - "vault"
+          - "trivy-ui"
+          - "smartctl-exporter"
+          - "popeye"
 
     steps:
       - name: Checkout code
@@ -71,3 +85,13 @@ jobs:
           curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/${{ github.repository }}/code-scanning/sarifs -d "{\"commit_sha\":\"${{ github.sha }}\",\"ref\":\"${{ github.ref }}\",\"sarif\":\"$(gzip -c trivy-results-${image_name}-${image_tag}.sarif | base64 -w 0)\"}"
         working-directory: ${{ matrix.directories }}
         continue-on-error: true
+
+      - name: Delete untagged images from GitHub Container Registry
+        continue-on-error: true
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v6
+        with:
+          token: ${{ secrets.PAT_GHCR_CLEANUP }}
+          package_name: ${{ matrix.cleanup-packages }}
+          untagged_only: true
+          except_untagged_multiplatform: true
+          owner_type: 'user'

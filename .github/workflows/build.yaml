@@ -105,5 +105,5 @@ jobs:
           token: ${{ secrets.PAT_GHCR_CLEANUP }}
           package_name: ${{ matrix.packages }}
           untagged_only: true
-          except_untagged_multiplatform: true
+          except_untagged_multiplatform: false
           owner_type: 'user'

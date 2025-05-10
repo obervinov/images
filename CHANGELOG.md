@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.5 - 2025-05-10
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.4...v1.4.5 by @obervinov in https://github.com/obervinov/images/pull/33
+#### 🚀 Features
+* Add new image `popeye` for Kubernetes cluster resource sanitizer
+
+
 ## v1.4.4 - 2025-04-15
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.3...v1.4.4 by @obervinov in https://github.com/obervinov/images/pull/32

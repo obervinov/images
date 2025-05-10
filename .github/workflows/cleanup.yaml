@@ -1,0 +1,42 @@
+---
+name: Cleanup images
+
+on:
+  push:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      checks: read
+      contents: write
+      packages: write
+      security-events: write
+    strategy:
+      matrix:
+        images:
+          - "backup-tools"
+          - "caddy"
+          - "certbot"
+          - "debug"
+          - "ghub"
+          - "glab"
+          - "gradle"
+          - "jupyterhub"
+          - "python"
+          - "vault"
+          - "trivy-ui"
+          - "smartctl-exporter"
+          - "popeye"
+
+    steps:
+      - name: Delete untagged images from GitHub Container Registry
+        continue-on-error: true
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v6
+        with:
+          token: ${{ secrets.PAT_GHCR_CLEANUP }}
+          package_name: ${{ github.event.repository.name }}/${{ matrix.images }}
+          untagged_only: true
+          except_untagged_multiplatform: false
+          owner_type: 'user'

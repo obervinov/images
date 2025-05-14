@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.5...v1.4.6 by @obervinov in https://github.com/obervinov/images/pull/34
 #### 🚀 Features
-* Added `parallel`and update dependencies in the `debug` and `backup-tools` images
+* Added `parallel` and update dependencies in the `debug` and `backup-tools` images
 
 
 ## v1.4.5 - 2025-05-10

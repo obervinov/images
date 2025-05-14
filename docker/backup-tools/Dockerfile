@@ -1,8 +1,8 @@
 ### VERSIONS METADATA ###
-ARG IMAGE_VERSION=1.0.2
-ARG ALPINE_VERSION=3.20
-ARG GO_VERSION=1.22.5
-ARG VAULT_VERSION=1.17.2
+ARG IMAGE_VERSION=1.0.3
+ARG ALPINE_VERSION=3.21
+ARG GO_VERSION=1.24.3
+ARG VAULT_VERSION=1.19.3
 ### END VERSIONS METADATA ###
 
 
@@ -70,7 +70,8 @@ RUN apk -U upgrade && \
     zip \
     postgresql \
     s3cmd \
-    rsync
+    rsync \
+    parallel
 
 COPY --from=vault-builder /usr/local/bin/vault /usr/local/bin/vault
 COPY --from=rclone-builder /usr/local/bin/rclone /usr/local/bin/rclone

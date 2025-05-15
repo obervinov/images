@@ -17,13 +17,14 @@ This Docker image contains a collection of tools for backing up and restoring da
   - `rsync`: Utility for efficiently transferring and synchronizing files between systems.
   - `rclone`: Command-line program to manage files on cloud storage.
   - `vault`: A tool for managing secrets.
+  - `parallel`: A shell tool for executing jobs in parallel.
 
 ## Usage
 
 To use this image, you can pull it from Docker Hub using the following command:
 
 ```bash
-docker pull obervinov/images/backup-tools:1.0.2
+docker pull obervinov/images/backup-tools:1.0.3
 ```
 
 Once pulled, you can run containers based on this image and use the included tools for backup and restore operations.
@@ -34,7 +35,7 @@ The source code for this Docker image is available on [GitHub](https://github.co
 
 ## Version
 
-This README corresponds to version 1.0.0 of the Docker image.
+This README corresponds to version 1.0.3 of the Docker image.
 
 ## Author
 

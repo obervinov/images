@@ -23,6 +23,7 @@ This Docker image provides a collection of utilities essential for investigating
 - `awscli` (Amazon Web Services Command Line Interface)
 - `yq` (YAML processor)
 - `rsync` (Remote file synchronization utility)
+- `parallel`: A shell tool for executing jobs in parallel.
 
 ## Usage
 

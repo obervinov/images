@@ -8,7 +8,6 @@ ARG CADDY_VERSION=2.9.1
 # Build binary with plugins
 FROM golang:${GOLANG_VERSION} AS builder
 
-ARG CADDY_VERSION
 
 WORKDIR /tmp
 RUN apk --no-cache add ca-certificates make git && update-ca-certificates

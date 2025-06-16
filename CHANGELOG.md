@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.7 - 2025-06-16
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.6...v1.4.7 by @obervinov in https://github.com/obervinov/images/pull/35
+#### 🚀 Features
+* Add `cloudflare-dns` plugin to the `caddy` image
+#### 💥 Breaking Changes
+* Remove L4 load balancer plugin from the `caddy` image
+
+
 ## v1.4.6 - 2025-05-15
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.5...v1.4.6 by @obervinov in https://github.com/obervinov/images/pull/34

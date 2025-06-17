@@ -1,6 +1,6 @@
 # Caddy Docker Image with Additional Plugins
 - DigitalOcean DNS plugin support
-- L4 Load Balancing
+- Cloudflare DNS plugin support
 - GeoIP
 
 This Docker image is designed to provide a custom Caddy server with additional plugins.
@@ -19,6 +19,5 @@ This Docker image is built in two stages:
 - **Documentation**: [GitHub Repository](https://github.com/obervinov/images/docker/caddy/README.md)
 - **Author**: [obervinov](https://github.com/obervinov)
 - **Source Code**: [GitHub Repository](https://github.com/obervinov/images/docker/caddy/Dockerfile)
-- **Version**: 2.9.1-alpine
 
 Feel free to customize this image according to your specific requirements and environment. If you encounter any issues or have suggestions for improvements, please don't hesitate to contribute to the GitHub repository.

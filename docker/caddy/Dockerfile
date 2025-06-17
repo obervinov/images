@@ -1,7 +1,7 @@
 ### VERSIONS METADATA ###
-ARG IMAGE_VERSION=2.9.1-rev1
+ARG IMAGE_VERSION=2.10.0
 ARG GOLANG_VERSION=1.24.1-alpine3.21
-ARG CADDY_VERSION=2.9.1
+ARG CADDY_VERSION=2.10.0
 ### END VERSIONS METADATA ###
 
 
@@ -19,7 +19,7 @@ RUN git clone "https://github.com/caddyserver/caddy.git" && \
 
 WORKDIR /tmp/caddy/cmd/caddy
 RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
-RUN xcaddy build \
+RUN xcaddy build v${CADDY_VERSION} \
     --with github.com/caddy-dns/digitalocean \
     --with github.com/shift72/caddy-geo-ip \
     --with github.com/caddy-dns/cloudflare \

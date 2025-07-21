@@ -34,5 +34,5 @@ RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /
 # Validators
 RUN curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_arm64.tar.gz")" > terrascan.tar.gz && \
     tar -xf terrascan.tar.gz terrascan && rm terrascan.tar.gz
-    sudo install terrascan /usr/local/bin && rm terrascan
+    install terrascan /usr/local/bin && rm terrascan
     terrascan --version

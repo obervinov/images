@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.7...v1.4.8 by @obervinov in https://github.com/obervinov/images/pull/36
 #### 🚀 Features
 * Rebuild `github-actions` image with latest base images and additional tools
+#### 🐛 Bug Fixes
+* fix build and push redundant Docker images that were not changed in the last commit (and overwrite existing images)
 
 
 ## v1.4.7 - 2025-06-17

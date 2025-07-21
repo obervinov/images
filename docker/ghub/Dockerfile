@@ -9,12 +9,12 @@ FROM node:${NODE_VERSION}-slim
 
 ARG IMAGE_VERSION
 
-LABEL org.opencontainers.image.description "This image contains utilities for automating work with github actions"
-LABEL org.opencontainers.image.url https://github.com/obervinov/images/docker-/ghub
-LABEL org.opencontainers.image.documentation https://github.com/obervinov/images/docker-/ghub/README.md
-LABEL org.opencontainers.image.authors https://github.com/obervinov
-LABEL org.opencontainers.image.source https://github.com/obervinov/images
-LABEL org.opencontainers.image.version ${IMAGE_VERSION}
+LABEL org.opencontainers.image.description="This image contains utilities for automating work with github actions"
+LABEL org.opencontainers.image.url=https://github.com/obervinov/images/docker-/ghub
+LABEL org.opencontainers.image.documentation=https://github.com/obervinov/images/docker-/ghub/README.md
+LABEL org.opencontainers.image.authors=https://github.com/obervinov
+LABEL org.opencontainers.image.source=https://github.com/obervinov/images
+LABEL org.opencontainers.image.version=${IMAGE_VERSION}
 
 # Update dependencies
 RUN apt-get update && apt-get -y upgrade && apt-get install -y \

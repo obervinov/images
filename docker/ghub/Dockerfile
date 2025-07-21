@@ -23,6 +23,7 @@ RUN apt-get update && apt-get -y upgrade && sudo apt-get install -y \
     wget \
     curl \
     tar \
+    coreutils \
     git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 # Terraform

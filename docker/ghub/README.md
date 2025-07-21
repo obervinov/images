@@ -3,7 +3,7 @@
 This Docker image provides utilities for automating work with GitHub self-hosted runners.
 
 ## Features
-- **Utilities**: It comes pre-installed with essential utilities such as `terraform`, `curl`, `git`, `vault`, `bash`.
+- **Utilities**: It comes pre-installed with essential utilities such as `terraform`, `curl`, `git`, `wget`, `bash`.
 
 ## Build Process
 

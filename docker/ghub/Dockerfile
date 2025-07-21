@@ -6,7 +6,6 @@ ARG TARGETARCH
 
 # Build the final image
 FROM node:${NODE_VERSION}-slim
-
 ARG IMAGE_VERSION
 
 LABEL org.opencontainers.image.description="This image contains utilities for automating work with github actions"

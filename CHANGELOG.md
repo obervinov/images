@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## v1.4.8 - 2025-07-21
+## v1.4.8 - 2025-07-24
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.7...v1.4.8 by @obervinov in https://github.com/obervinov/images/pull/36
 #### 🚀 Features

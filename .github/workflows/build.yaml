@@ -33,6 +33,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up QEMU (for Docker buildx)
         uses: docker/setup-qemu-action@v3
@@ -49,15 +51,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install trivy
 
-      - name: Build and Push Docker images
+      - name: Check for Dockerfile changes in current directory
+        id: check_changes
         run: |
-          # Check if Dockerfile was changed in this directory
-          if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            if ! git diff --name-only HEAD~1 HEAD | grep -q "^${{ matrix.directories }}/Dockerfile$"; then
-              echo "No changes in Dockerfile, skipping build and push."
-              exit 0
-            fi
+          if git diff --quiet ${{ github.event.before }} ${{ github.sha }} -- ${{ matrix.directories }}/Dockerfile; then
+            echo "Dockerfile in ${{ matrix.directories }} has no changes. Skipping build."
+            echo "build_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Dockerfile in ${{ matrix.directories }} has changes. Proceeding with build."
+            echo "build_needed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Build and Push Docker images
+        if: steps.check_changes.outputs.build_needed == 'true'
+        run: |
           # Build and push Docker images to GitHub Container Registry
           echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           image_name=$(pwd | awk -F / '{print $NF}')

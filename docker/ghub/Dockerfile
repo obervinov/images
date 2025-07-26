@@ -32,7 +32,7 @@ RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | tee /usr/s
     apt-get update && apt-get install -y terraform && \
     terraform --version
 # Validators
-RUN curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_arm64.tar.gz")" > terrascan.tar.gz && \
+RUN curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_${TARGETARCH}.tar.gz")" > terrascan.tar.gz && \
     tar -xf terrascan.tar.gz terrascan && rm terrascan.tar.gz && \
     install terrascan /usr/local/bin && rm terrascan && \
     terrascan version

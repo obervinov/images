@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.8 - 2025-07-26
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.7...v1.4.8 by @obervinov in https://github.com/obervinov/images/pull/36
+#### 🚀 Features
+* Rebuild `github-actions` image with latest base images and additional tools
+* bump vault image to `1.20.1`
+#### 🐛 Bug Fixes
+* fix build and push redundant Docker images that were not changed in the last commit (and overwrite existing images)
+
+
 ## v1.4.7 - 2025-06-17
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.6...v1.4.7 by @obervinov in https://github.com/obervinov/images/pull/35

@@ -33,6 +33,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up QEMU (for Docker buildx)
         uses: docker/setup-qemu-action@v3
@@ -49,7 +51,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install trivy
 
+      - name: Check for Dockerfile changes in current directory
+        id: check_changes
+        run: |
+          if git diff --quiet ${{ github.event.before }} ${{ github.sha }} -- ${{ matrix.directories }}/Dockerfile; then
+            echo "Dockerfile in ${{ matrix.directories }} has no changes. Skipping build."
+            echo "build_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Dockerfile in ${{ matrix.directories }} has changes. Proceeding with build."
+            echo "build_needed=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build and Push Docker images
+        if: steps.check_changes.outputs.build_needed == 'true'
         run: |
           # Build and push Docker images to GitHub Container Registry
           echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -68,6 +82,6 @@ jobs:
           # Scan Docker images with Trivy
           trivy image --exit-code 0 --severity HIGH,CRITICAL ghcr.io/${{ github.repository }}/${image_name}:${image_tag} -f sarif -o trivy-results-${image_name}-${image_tag}.sarif
           # Upload Trivy scan results
-          curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/${{ github.repository }}/code-scanning/sarifs -d "{\"commit_sha\":\"${{ github.sha }}\",\"ref\":\"${{ github.ref }}\",\"sarif\":\"$(gzip -c trivy-results-${image_name}-${image_tag}.sarif | base64 -w 0)\"}"
+          curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ github.token }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/${{ github.repository }}/code-scanning/sarifs -d "{\"commit_sha\":\"${{ github.sha }}\",\"ref\":\"${{ github.ref }}\",\"sarif\":\"$(gzip -c trivy-results-${image_name}-${image_tag}.sarif | base64 -w 0)\"}"
         working-directory: ${{ matrix.directories }}
         continue-on-error: false

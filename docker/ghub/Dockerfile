@@ -32,12 +32,11 @@ RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | tee /usr/s
     apt-get update && apt-get install -y terraform && \
     terraform --version
 # Validators
-RUN arch=$(dpkg --print-architecture) && echo "ARCH: $arch" && \
+RUN arch=$(dpkg --print-architecture) && if [ "$arch" = "amd64" ]; then arch="x86_64"; elif [ "$arch" = "arm64" ]; then arch="arm64"; fi && echo "Detected architecture: $arch" && \
     curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_${arch}.tar.gz")" > terrascan.tar.gz && \
     tar -xf terrascan.tar.gz terrascan && rm terrascan.tar.gz && \
     install terrascan /usr/local/bin && rm terrascan && \
     terrascan version
-
 # GitHub CLI
 RUN mkdir -p -m 755 /etc/apt/keyrings \
 	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \

@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## v1.4.9 - 2025-08-17
 ### What's Changed
-**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.8...v1.4.9 by @obervinov in https://github.com/obervinov/images/pull/37
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.8...v1.4.9 by @obervinov in https://github.com/obervinov/images/pull/38
 #### 🚀 Features
 * update jupyterhub image dependencies
 #### 🐛 Bug Fixes

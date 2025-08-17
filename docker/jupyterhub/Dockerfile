@@ -1,4 +1,4 @@
-FROM quay.io/jupyterhub/k8s-singleuser-sample:4.1.0
+FROM quay.io/jupyterhub/k8s-singleuser-sample:4.2.0
 
 ARG IMAGE_VERSION=1.0.2
 

@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.9 - 2025-08-17
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.8...v1.4.9 by @obervinov in https://github.com/obervinov/images/pull/38
+#### 🚀 Features
+* update jupyterhub image dependencies
+#### 🐛 Bug Fixes
+* restore jupyterhub image manifest
+
+
 ## v1.4.8 - 2025-07-26
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.7...v1.4.8 by @obervinov in https://github.com/obervinov/images/pull/36

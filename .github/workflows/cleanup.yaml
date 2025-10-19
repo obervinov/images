@@ -29,6 +29,7 @@ jobs:
           - "trivy-ui"
           - "smartctl-exporter"
           - "popeye"
+          - "fluentd"
 
     steps:
       - name: Delete untagged images from GitHub Container Registry

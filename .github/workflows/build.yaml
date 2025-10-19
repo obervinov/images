@@ -29,6 +29,7 @@ jobs:
           - "docker/trivy-ui"
           - "docker/smartctl-exporter"
           - "docker/popeye"
+          - "docker/fluentd"
 
     steps:
       - name: Checkout code

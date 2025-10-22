@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.version ${IMAGE_VERSION}
 USER root
 
 # For healthcheck purposes
-RUN apt-get install netcat-openbsd -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install netcat-openbsd -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Plugins installation
 RUN gem install elasticsearch --no-document --version 8.17.1 && \

@@ -17,8 +17,11 @@ LABEL org.opencontainers.image.version ${IMAGE_VERSION}
 
 USER root
 
-RUN ["gem", "install", "elasticsearch", "--no-document", "--version", "8.17.1"]
-RUN ["gem", "install", "fluent-plugin-elasticsearch", "--no-document", "--version", "5.4.3"]
+# For healthcheck purposes
+RUN sudo apt-get install curl netcat-openbsd -y && sudo apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN ["gem", "install", "fluent-plugin-grafana-loki", "--no-document"]
+# Plugins installation
+RUN gem install elasticsearch --no-document --version 8.17.1 && \
+    gem install fluent-plugin-grafana-loki --no-document
+
 USER fluent

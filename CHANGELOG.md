@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.10 - 2025-10-25
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.9...v1.4.10 by @obervinov in https://github.com/obervinov/images/pull/39
+#### 🚀 Features
+* add fluentd image with plugins for Elasticsearch and Grafana Loki
+
+
 ## v1.4.9 - 2025-08-17
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.8...v1.4.9 by @obervinov in https://github.com/obervinov/images/pull/38

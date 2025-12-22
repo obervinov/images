@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.4.11 - 2025-12-22
+### What's Changed
+**Full Changelog**: https://github.com/obervinov/images/compare/v1.4.10...v1.4.11 by @obervinov in https://github.com/obervinov/images/pull/41
+#### 🚀 Features
+* add Profile Header Generator image for GitHub profiles
+
+
+
 ## v1.4.10 - 2025-10-25
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.9...v1.4.10 by @obervinov in https://github.com/obervinov/images/pull/39

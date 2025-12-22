@@ -30,6 +30,7 @@ jobs:
           - "smartctl-exporter"
           - "popeye"
           - "fluentd"
+          - "profile-header-generator"
 
     steps:
       - name: Delete untagged images from GitHub Container Registry

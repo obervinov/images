@@ -30,10 +30,11 @@ jobs:
           - "docker/smartctl-exporter"
           - "docker/popeye"
           - "docker/fluentd"
+          - "docker/profile-header-generator"
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 

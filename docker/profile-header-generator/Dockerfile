@@ -9,8 +9,6 @@ WORKDIR /usr/src/app
 RUN apk add --no-cache git && \
     git clone --depth 1 https://github.com/leviarista/github-profile-header-generator.git .
 RUN npm install
-
-COPY . .
 RUN npm run build
 
 FROM nginx:${NGINX_VERSION}-alpine
@@ -23,3 +21,4 @@ LABEL org.opencontainers.image.documentation "https://github.com/leviarista/gith
 LABEL org.opencontainers.image.authors "https://github.com/obervinov"
 LABEL org.opencontainers.image.source "https://github.com/leviarista/github-profile-header-generator"
 LABEL org.opencontainers.image.version ${IMAGE_VERSION}
+LABEL org.opencontainers.image.version "${IMAGE_VERSION}"

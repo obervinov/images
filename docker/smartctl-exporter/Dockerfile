@@ -1,13 +1,15 @@
-ARG GOLANG_VERSION=1.24.1-bullseye
-ARG ALPINE_VERSION=3.21.3
-ARG IMAGE_VERSION=0.13.0
+ARG ALPINE_VERSION=3.22.2
+ARG APP_VERSION=0.14.0
+ARG IMAGE_VERSION=0.14.0
 
 FROM alpine:${ALPINE_VERSION} as build
 WORKDIR /build
+ARG APP_VERSION
+ENV APP_VERSION=${APP_VERSION}
+
 RUN apk add --no-cache --update go git build-base
-RUN git clone "https://github.com/prometheus-community/smartctl_exporter.git" /build && \
-    go build -o smartctl_exporter && chmod +x smartctl_exporter && \
-    /build/smartctl_exporter --help
+RUN git clone --depth 1 --branch v${APP_VERSION} "https://github.com/prometheus-community/smartctl_exporter.git" /build
+RUN go build -o smartctl_exporter && chmod +x smartctl_exporter && /build/smartctl_exporter --help
 
 
 FROM alpine:${ALPINE_VERSION}

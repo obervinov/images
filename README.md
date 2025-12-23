@@ -30,6 +30,7 @@ This repository contains Dockerfiles for building Docker images.
 | trivy-ui     | Docker image for Trivy web UI.                      | [README](docker/trivy-ui/README.md)     | [Manifest](docker/trivy-ui/Dockerfile)     |
 | smartctl-exporter | Docker image for smartctl-exporter.               | [README](docker/smartctl-exporter/README.md) | [Manifest](docker/smartctl-exporter/Dockerfile) |
 | popeye        | Docker image for Popeye, a Kubernetes cluster sanitizer. | [README](docker/popeye/README.md)       | [Manifest](docker/popeye/Dockerfile)       |
+| profile-header-generator | Docker image for GitHub Profile Header Generator. | [README](docker/profile-header-generator/README.md) | [Manifest](docker/profile-header-generator/Dockerfile) |
 
 Each directory under `docker/` corresponds to a specific Docker image. Navigate to each directory to view the respective Dockerfile and README for further instructions.
 

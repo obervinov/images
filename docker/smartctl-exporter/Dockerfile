@@ -7,11 +7,8 @@ WORKDIR /build
 ARG APP_VERSION
 ENV APP_VERSION=${APP_VERSION}
 
-RUN apk add --no-cache --update go git build-base gpg
-RUN git clone https://github.com/prometheus-community/smartctl_exporter.git /build && \
-    git fetch --tags && \
-    git checkout v${APP_VERSION} && \
-    git verify-commit HEAD || exit 1
+RUN apk add --no-cache --update go git build-base
+RUN git clone --depth 1 --branch v${APP_VERSION} "https://github.com/prometheus-community/smartctl_exporter.git" /build
 RUN go build -o smartctl_exporter && chmod +x smartctl_exporter && /build/smartctl_exporter --help
 
 

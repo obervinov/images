@@ -7,10 +7,13 @@ ARG IMAGE_VERSION=1.0.0
 FROM node:${NODE_VERSION} AS build
 
 WORKDIR /usr/src/app
+ARG APP_VERSION
+
 RUN apk add --no-cache git && \
     git clone --depth 1 https://github.com/leviarista/github-profile-header-generator.git . && git checkout v${APP_VERSION}
 RUN npm install
 RUN npm run build
+
 
 FROM nginx:${NGINX_VERSION}-alpine
 COPY --from=build /usr/src/app/conf/default.conf /etc/nginx/conf.d/

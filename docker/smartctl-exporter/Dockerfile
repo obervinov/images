@@ -4,6 +4,8 @@ ARG IMAGE_VERSION=0.14.0
 
 FROM alpine:${ALPINE_VERSION} as build
 WORKDIR /build
+ARG APP_VERSION
+
 RUN apk add --no-cache --update go git build-base
 RUN git clone "https://github.com/prometheus-community/smartctl_exporter.git" /build && \
     git checkout v${APP_VERSION}

@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 ARG APP_VERSION
 
 RUN apk add --no-cache git && \
-    git clone --depth 1 https://github.com/leviarista/github-profile-header-generator.git . && git checkout v${APP_VERSION}
+    git clone --depth 1 --branch v${APP_VERSION} https://github.com/leviarista/github-profile-header-generator.git .
 RUN npm install
 RUN npm run build
 

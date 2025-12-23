@@ -11,12 +11,16 @@ ARG APP_VERSION
 ENV APP_VERSION=${APP_VERSION}
 
 RUN apk add --no-cache git && \
-    git clone --depth 1 --branch v${APP_VERSION} https://github.com/leviarista/github-profile-header-generator.git .
+    git clone https://github.com/leviarista/github-profile-header-generator.git . && \
+    git fetch --tags && \
+    git checkout v${APP_VERSION} && \
+    git verify-commit HEAD || exit 1
 RUN npm install
 RUN npm run build
 
 
 FROM nginx:${NGINX_VERSION}-alpine
+ARG IMAGE_VERSION
 COPY --from=build /usr/src/app/conf/default.conf /etc/nginx/conf.d/
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 

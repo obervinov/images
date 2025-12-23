@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 ARG APP_VERSION
 ENV APP_VERSION=${APP_VERSION}
 
-RUN apk add --no-cache git && \
+RUN apk add --no-cache git gpg && \
     git clone https://github.com/leviarista/github-profile-header-generator.git . && \
     git fetch --tags && \
     git checkout v${APP_VERSION} && \

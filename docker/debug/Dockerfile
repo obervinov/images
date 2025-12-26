@@ -1,6 +1,6 @@
 ### VERSIONS METADATA ###
 ARG IMAGE_VERSION=1.0.10
-ARG UBUNTU_VERSION=24.10
+ARG UBUNTU_VERSION=26.04
 ### END VERSIONS METADATA ###
 
 
@@ -15,13 +15,21 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version ${IMAGE_VERSION}
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y apt-transport-https ca-certificates gnupg curl 
+
+# ClickHouse repo
+RUN curl -fsSL 'https://packages.clickhouse.com/rpm/lts/repodata/repomd.xml.key' | gpg --dearmor -o /usr/share/keyrings/clickhouse-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/ubuntu/ focal main" | tee /etc/apt/sources.list.d/clickhouse.list && \
+    ARCH=$(dpkg --print-architecture) && \
+    echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg arch=${ARCH}] https://packages.clickhouse.com/deb stable main" | tee /etc/apt/sources.list.d/clickhouse.list && \
+    apt-get update
+
+RUN apt-get install -y \
     software-properties-common \
     nmap \
     netcat-traditional \
     openssh-client \
     tcpdump \
-    curl \
     wget \
     strace \
     inetutils-ping \

@@ -15,6 +15,7 @@ LABEL org.opencontainers.image.authors https://github.com/obervinov
 LABEL org.opencontainers.image.source https://github.com/obervinov/images
 LABEL org.opencontainers.image.version ${IMAGE_VERSION}
 
+# Base packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y apt-transport-https ca-certificates gnupg curl 
 
 # ClickHouse repo
@@ -24,6 +25,7 @@ RUN curl -fsSL 'https://packages.clickhouse.com/rpm/lts/repodata/repomd.xml.key'
     echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg arch=${ARCH}] https://packages.clickhouse.com/deb stable main" | tee /etc/apt/sources.list.d/clickhouse.list && \
     apt-get update
 
+# Debugging packages
 RUN apt-get install -y \
     software-properties-common \
     nmap \

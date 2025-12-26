@@ -3,11 +3,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## v1.4.12 - 2025-12-25
+## v1.4.12 - 2025-12-26
 ### What's Changed
 **Full Changelog**: https://github.com/obervinov/images/compare/v1.4.11...v1.4.12 by @obervinov in https://github.com/obervinov/images/pull/42
 #### 🚀 Features
-* add `clickhouse-cli` tool to `debug` image
+* add `clickhouse-client` tool to `debug` image
 
 
 ## v1.4.11 - 2025-12-23

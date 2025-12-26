@@ -49,12 +49,15 @@ RUN apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy custom scripts and binaries
 COPY bin/ /usr/local/bin/
 
+# Install not available via apt packages
+# AWS CLI v2
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&\
     unzip awscliv2.zip &&\
     ./aws/install
-
+# YQ
 RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 &&\
     chmod a+x /usr/local/bin/yq
 

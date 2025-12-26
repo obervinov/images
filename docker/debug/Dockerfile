@@ -1,5 +1,5 @@
 ### VERSIONS METADATA ###
-ARG IMAGE_VERSION=1.0.9
+ARG IMAGE_VERSION=1.0.10
 ARG UBUNTU_VERSION=24.10
 ### END VERSIONS METADATA ###
 
@@ -35,6 +35,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     rsync \
     jq \
     parallel \
+    clickhouse-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

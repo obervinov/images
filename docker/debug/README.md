@@ -24,6 +24,7 @@ This Docker image provides a collection of utilities essential for investigating
 - `yq` (YAML processor)
 - `rsync` (Remote file synchronization utility)
 - `parallel`: A shell tool for executing jobs in parallel.
+- `clickhouse-client`: Command-line client for ClickHouse database.
 
 ## Usage
 
